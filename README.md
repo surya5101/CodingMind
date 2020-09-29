@@ -1,8 +1,7 @@
 
+# TECHNICAL QUESTIONS
 
-##TECHNICAL QUESTIONS
-
-##What an API?
+# What is an API?
 
 An API is simply an intermediate between systems to which enables them to interact with each other. For example, consider train booking, if you want to book a ticket you will use MakeMyTrip, Paytm and what not. In real they really don’t have provisions for booking the ticket [or] to show you the number of available tickets instead the use API i.e. a program provided by the real ticket provider on their server to show and block tickets.
 
