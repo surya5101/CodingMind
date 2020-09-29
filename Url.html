@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>URL check</title>
+       <style>
+           body{
+               font-family: 'Courier New';
+               font-size: 20px;
+           }
+           ::placeholder
+           {
+               color: greenyellow;
+           }
+           input{
+               font-size: 35px;
+               background-color:green;
+               
+               font-family: 'Courier New', Courier, monospace;
+           }
+           button{
+               font-size: 25px;
+               font-family: 'Courier New', Courier, monospace;
+           }
+       </style>
+   </head>
+<body style="color: white; background-color: black;"> <center>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <input type="text"id="input" placeholder="Enter a url"><br><br><br>
+      <button onclick="valid() " style="color:black;background-color: greenyellow;" type="button">check</button> 
+      <p id="output"></p>
+      <script type="text/javascript">
+       function valid()
+       {
+           var email =document.getElementById("input").value
+           var text=document.getElementById("output")
+           var pattern = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
+           if(email.match(pattern)) {text.innerHTML="true";}
+           else{text.innerHTML="false";}
+       }
+      </script> 
+      </center>
+</body>
+
+ 
+</html>

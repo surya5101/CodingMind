@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Time</title>
+<body onload=time(); style="color:#001f3f;background-color:#0074D9
+;font-size:80px ;"><br><br><br><br>
+<center><span id='output';" ></span><center></center>
+<script type="text/javascript"> 
+	function time(){
+	var refresh=1000;
+	mytime=setTimeout(function()
+	{
+		var dat = new Date()
+		var res =dat.toLocaleTimeString([], { hour12: true});
+		document.getElementById('output').innerHTML = res;
+		console.log(res);
+		time();
+	}
+	,refresh)
+}
+</script>
+</body>
+</html>

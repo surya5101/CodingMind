@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>Calculate Age</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body{
+        color:cadetblue;
+    }
+
+    button{
+        height: 50px;
+        width: 100px;
+    }
+    .container-1{
+        border: 1px solid black;
+        padding-bottom: 30px;
+        margin:0 auto;
+        width: 75%;
+    }
+</style>    
+</head>
+
+
+<body>
+    <div class='container-1' >
+        <center><h1>Birthday Calculator</h1><br></center>
+        <center><div> <label for="in"><b style="color:Black">Choose Birthday</b></label><br><br>
+            <input type="date" id="cin" required><br><br></div></center>
+        <div>
+        <div class="flex-container-1" style = "display: flex; text-align: center; justify-content: space-around;">
+            <div>             
+                <button style="background-color: rgb(66, 66, 177);" onclick="ageinDays()">Click me</button>
+            </div>
+            <div>
+                <button style="background-color: rgb(192, 46, 95);" onclick="reset()">Reset</button>
+            </div>
+
+        </div>
+        <div class='flex-container-1'>
+            <center> <div id='flex-box-result'></div></center>
+
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+        function ageinDays(){
+            let date = document.getElementById('cin').value;
+            let d = new Date( date );
+            let cd = new Date();
+
+            let year = d.getFullYear();
+            let currYear = cd.getFullYear();
+            let currDay = cd.getDate();
+            let monthDiff;
+
+            let yearDiff = cd.getFullYear() - year ;
+
+            
+            if(cd.getMonth() >= d.getMonth())
+            { monthDiff = cd.getMonth() - d.getMonth();}
+            else
+            {monthDiff = (12 - d.getMonth() ) + cd.getMonth();
+            yearDiff -= 1;}
+            
+            
+            if (yearDiff == 0 && monthDiff == 0){
+                days = currDay - d.getDate();
+            }
+            
+            else{
+                days = currDay - d.getDate();
+            }
+            
+           
+
+            let h1 = document.createElement('h1')
+            let text = document.createTextNode( yearDiff + ' Year ' + monthDiff + ' Month ' + days + " Days.");
+            h1.setAttribute('id','ageinDays');
+            h1.appendChild(text);
+            document.getElementById('flex-box-result').appendChild(h1);
+        
+        }
+        
+        function reset(){
+            document.getElementById('ageinDays').remove();
+        }
+    
+    </script>
+</body>
+
+</html>
